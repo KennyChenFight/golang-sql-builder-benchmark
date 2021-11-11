@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	"github.com/doug-martin/goqu"
+	"github.com/doug-martin/goqu/v9"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -33,8 +33,7 @@ func BenchmarkGoquSelectSimple(b *testing.B) {
 						goqu.I("state").Eq("spam"),
 					),
 				),
-			).
-			ToSql()
+			).ToSQL()
 	}
 }
 
@@ -61,7 +60,7 @@ func BenchmarkGoquSelectConditional(b *testing.B) {
 				Offset(8)
 		}
 
-		qb.ToSql()
+		qb.ToSQL()
 	}
 }
 
@@ -100,6 +99,6 @@ func BenchmarkGoquSelectComplex(b *testing.B) {
 			Order(goqu.I("l").Asc()).
 			Limit(7).
 			Offset(8).
-			ToSql()
+			ToSQL()
 	}
 }

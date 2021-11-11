@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/gocraft/dbr"
-	dbrDialect "github.com/gocraft/dbr/dialect"
+	"github.com/gocraft/dbr/v2"
+	dbrDialect "github.com/gocraft/dbr/v2/dialect"
 )
 
 //
